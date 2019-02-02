@@ -2,7 +2,7 @@
 <mat-card class="center">
   <table>
     <tr>
-        <mat-icon matPrefix >arrow_left_alt</mat-icon>
+        <a href="/login"><mat-icon matPrefix >keyboard_backspace</mat-icon></a>
         <mat-label>Back</mat-label>
     </tr>
     <br>
@@ -45,7 +45,9 @@
   </mat-card-content>
 
   <mat-card-actions>
+    <a href="/login">
     <button mat-raised-button (click)="login()" color="primary">Register</button>
+  </a>
     <p>
     <span class=" ">Not the first time here?
       <a href="/login">Log in</a></span></p>

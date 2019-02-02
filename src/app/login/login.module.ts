@@ -2,8 +2,10 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { LoginRoutingModule } from './login-routing.module';
-import { LoginComponent } from './login.component';
 import { CommonMaterialModule } from '../shared/common-material/common-material.module';
+import { SignInComponent } from './sign-in/sign-in.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
+import { VerifyEmailComponent } from './verify-email/verify-email.component';
 
 
 @NgModule({
@@ -12,6 +14,9 @@ import { CommonMaterialModule } from '../shared/common-material/common-material.
     LoginRoutingModule,
     CommonMaterialModule
   ],
-  declarations: [LoginComponent]
+  declarations: [
+                SignInComponent, 
+                SignUpComponent, 
+                VerifyEmailComponent]
 })
 export class LoginModule { }

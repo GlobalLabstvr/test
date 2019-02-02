@@ -6,6 +6,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CommonMaterialModule } from './shared/common-material/common-material.module';
 
+import { AngularFireModule  } from "@angular/fire";
+import { AngularFireAuthModule } from "@angular/fire/auth";
+import { AngularFirestoreModule, FirestoreSettingsToken } from '@angular/fire/firestore';
+import { environment } from '../environments/environment';
+
+import { AuthService } from "./shared/services/auth.service";
+
 @NgModule({
   declarations: [
     AppComponent
@@ -13,9 +20,12 @@ import { CommonMaterialModule } from './shared/common-material/common-material.m
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
+    AngularFirestoreModule,
   ],
-  providers: [],
+  providers: [AuthService, { provide: FirestoreSettingsToken, useValue: {} }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
