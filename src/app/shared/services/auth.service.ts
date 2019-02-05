@@ -46,11 +46,16 @@ export class AuthService {
 
    
    SignUp(email, password) {
+     console.log(email);
+     console.log(password);
     return this.afAuth.auth.createUserWithEmailAndPassword(email, password)
       .then((result) => {
+        console.log('sing')
+        console.log(result);
         this.SendVerificationMail();
         this.SetUserData(result.user);
       }).catch((error) => {
+        console.log(error.message)
         window.alert(error.message)
       })
   }
@@ -58,7 +63,7 @@ export class AuthService {
   SendVerificationMail() {
     return this.afAuth.auth.currentUser.sendEmailVerification()
     .then(() => {
-      this.router.navigate(['verify-email-address']);
+      this.router.navigate(['login/verify-email-address']);
     })
   }
   get isLoggedIn(): boolean {
@@ -66,7 +71,6 @@ export class AuthService {
     return (user !== null && user.emailVerified !== false) ? true : false;
   }
 
-  
   AuthLogin(provider) {
     return this.afAuth.auth.signInWithPopup(provider)
     .then((result) => {
@@ -85,9 +89,9 @@ export class AuthService {
     const userData: User = {
       uid: user.uid,
       email: user.email,
-      displayName: user.displayName,
-      photoURL: user.photoURL,
-      emailVerified: user.emailVerified
+      emailVerified: user.emailVerified,
+      phoneNumber: user.phoneNumber,
+      photoURL: user.photoURL
     }
     return userRef.set(userData, {
       merge: true

@@ -10,7 +10,7 @@ import { VerifyEmailComponent } from './verify-email/verify-email.component';
 const routes: Routes = [
   { path:'', component: SignInComponent },
   { path:'sign-up', component: SignUpComponent },
-  { path:'verify-email', component: VerifyEmailComponent },
+  { path:'verify-email-address', component: VerifyEmailComponent },
   { path:'payment', loadChildren:'../payment/payment.module#PaymentModule'}
   
 ];

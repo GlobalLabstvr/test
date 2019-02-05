@@ -7,13 +7,12 @@ import { initializeApp } from "firebase";
 export const environment = {
   production: false,
   firebase: {
-    apiKey: "AIzaSyCPGKIkOlF0rCSmiig4UQoPDa-SgVzOFGI",
-    authDomain: "https://console.firebase.google.com/u/1/project/first-firebase-project-fe361/authentication/users",
-    databaseURL: "https://console.firebase.google.com/u/1/project/first-firebase-project-fe361/database/firestore/data~2FUser%20Profile~2FQGfGJxH5kWZXZUXrHPY6",
-    projectId: "first-firebase-project-fe361",
-    storageBucket: "https://console.firebase.google.com/u/1/project/first-firebase-project-fe361/storage/first-firebase-project-fe361.appspot.com/files",
-    messagingSenderId: "399704375504"
-    
+    apiKey: "AIzaSyCKWeVAOMIfzOD6YF5l4eQyG6xJzgKZqc8",
+    authDomain: "test1-c789a.firebaseapp.com",
+    databaseURL: "https://test1-c789a.firebaseio.com",
+    projectId: "test1-c789a",
+    storageBucket: "test1-c789a.appspot.com",
+    messagingSenderId: "533249528553"
   }
 };
 
