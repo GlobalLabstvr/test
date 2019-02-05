@@ -1,28 +1,59 @@
-<div class="displayTable">
-  <div class="displayTableCell">
+<div class="main-div">
+<mat-card class="center">
+  <table>
+    <tr>
+        <a href="/login"><mat-icon matPrefix >keyboard_backspace</mat-icon></a>
+        <mat-label>Back</mat-label>
+    </tr>
+    <br>
+      <tr>
+          <img style="padding: 10px 50px 25px 10px;  height:120px; width:120px;"  src="../../assets/images/100.png" >
+      </tr>
+      <tr>
+          <mat-label style="font-size:40px; margin-bottom: 20px"><b>REGISTER</b></mat-label>
+      </tr>
+    </table>
 
-    <div class="authBlock">
-      <h3>Sign Up</h3>
+    
 
-      <div class="formGroup">
-        <input type="email" class="formControl" placeholder="Email Address" #userEmail required>
-      </div>
+  <mat-card-content>
+          
+    <form class="my-form">
+      <mat-form-field class="full width">
+          <mat-icon matPrefix style="margin-right:8px">account_circle</mat-icon>
+        <mat-label>Email ID</mat-label>
+        <input matInput type="email" tabindex="1" placeholder="" name="Email ID" formControlName="email">
 
-      <div class="formGroup">
-        <input type="password" class="formControl" placeholder="Password" #userPwd required>
-      </div>
+      </mat-form-field>
 
-      <div class="formGroup">
-        <input type="button" class="btn btnPrimary" value="Sign Up" (click)="authService.SignUp(userEmail.value, userPwd.value)">
-      </div>
+      <br>
+      <mat-form-field class="full width">
+          <mat-icon matPrefix style="margin-right:8px">lock</mat-icon>
+          <mat-label>Password</mat-label>
+          <input matInput type="password" placeholder="" name="Password" required>
+          </mat-form-field>
 
-      <div class="formGroup">
-        <span class="or"><span class="orInner">Or</span></span>
-      </div>
+          <br>
+          <mat-form-field class="full width">
+              <mat-icon matPrefix style="margin-right:8px">settings_cell</mat-icon>
+              <mat-label>Mobile No</mat-label>
+              <input matInput type="tel" name="Mobile No" >
+              </mat-form-field>
 
-     <div class="redirectToLogin">
-      <span>Already have an account? <span class="redirect" routerLink="/sign-in">Login</span></span>
-    </div>
-  </div>
+    </form>
 
-</div>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <a href="/login">
+    <button mat-raised-button (click)="login()" color="primary">Register</button>
+  </a>
+    <p>
+    <span class=" ">Not the first time here?
+      <a href="/login">Log in</a></span></p>
+  </mat-card-actions>
+</mat-card>
+</div>  
+    
+  
+  
