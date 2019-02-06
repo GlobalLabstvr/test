@@ -1,6 +1,5 @@
-import { Injectable, NgZone } from '@angular/core';
+import { Injectable, NgZone, OnInit } from '@angular/core';
 import { User } from "../services/user";
-import { auth } from 'firebase/app';
 import { AngularFireAuth } from "@angular/fire/auth";
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Router } from "@angular/router";
@@ -9,7 +8,7 @@ import { Router } from "@angular/router";
   providedIn: 'root'
 })
 
-export class AuthService {
+export class AuthService implements OnInit {
   userData: any; 
 
   constructor(
@@ -18,7 +17,10 @@ export class AuthService {
     public router: Router,  
     public ngZone: NgZone 
   ) {    
-    
+
+  }
+
+  ngOnInit(){
     this.afAuth.authState.subscribe(user => {
       if (user) {
         this.userData = user;
@@ -30,7 +32,6 @@ export class AuthService {
       }
     })
   }
-
   
   SignIn(email, password) {
     return this.afAuth.auth.signInWithEmailAndPassword(email, password)
