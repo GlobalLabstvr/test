@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { SecureInnerPagesGuard } from './shared/guard/secure-inner-pages.guard';
+import { AuthGuard } from './shared/guard/auth.guard';
 
 const routes: Routes = [
-  {path:'login', loadChildren:'./login/login.module#LoginModule'},
-  {path:'payment',loadChildren:'./payment/payment.module#PaymentModule'},
+  {path:'login', loadChildren:'./login/login.module#LoginModule', canActivate: [AuthGuard] },
+  {path:'payment',loadChildren:'./payment/payment.module#PaymentModule', canActivate: [SecureInnerPagesGuard]},
   {path:'', redirectTo:'/login',pathMatch:'full'}
 ];
 
